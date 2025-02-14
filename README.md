@@ -4,7 +4,7 @@
 ![](https://img.shields.io/badge/Proyectos_Prueba-En_Progreso-991e34?style=for-the-badge&logo=github)
 ![](https://img.shields.io/badge/Proyecto_Final-No_disponible-AC5840?style=for-the-badge&logo=intellijidea)
 
-> Parte de este apunte está parcialmente perdido en Linux Mint
+> Parte de este apunte fue parcialmente recuperado de Linux Mint
 
 ## Flujo de trabajo
 
@@ -39,18 +39,18 @@ Normalmente, se recomienda la siguiente estructura para los paquetes en una apli
 ## Módulos de Spring
 
 - **Data Access / Integration**
-  - **JDBC:** Elimina la necesidad de hacer codificaciones JDBC y un análisis de errores según el proveedor de la base
-    de datos.
-  - **TX:** Admite la gestión de transacciones.
-  - **OXM:** Implementa el mapeo Objeto a XML como *JAXB* y *XStream*.
-  - **ORM:** Posibilita la integración de API que hagan el mapeo de relación de objetos como *JPA* e *Hibernate*.
-  - **JMS:** Permite producir y consumir mensajes.
-  - Transactions
+    - **JDBC:** Elimina la necesidad de hacer codificaciones JDBC y un análisis de errores según el proveedor de la base
+      de datos.
+    - **TX:** Admite la gestión de transacciones.
+    - **OXM:** Implementa el mapeo Objeto a XML como *JAXB* y *XStream*.
+    - **ORM:** Posibilita la integración de API que hagan el mapeo de relación de objetos como *JPA* e *Hibernate*.
+    - **JMS:** Permite producir y consumir mensajes.
+    - Transactions
 - **Web**
-  - WebSocket
-  - Servilet
-  - Web
-  - Portlet
+    - WebSocket
+    - Servilet
+    - Web
+    - Portlet
 - **AOP:** Implementa la programación orientada a aspectos, define interceptores de métodos con puntos de corte.
 - **Aspects:** Facilita la integración con *AspectJ*
 - **Instrument:** Brinda soporte para la instrumentación de clases e implementación de cargadores de clases para usar
@@ -58,10 +58,10 @@ Normalmente, se recomienda la siguiente estructura para los paquetes en una apli
 - **Messaging:** Para servir como aplicaciones fundamentadas en mensajería.
 - **Core Container:** Este es el contenedor núcleo de Spring y proporciona la funcionalidad principal al Framework de
   Spring. En una aplicación Spring, los objetos de la aplicación 'viven' dentro de un contenedor.
-  - Beans
-  - Core
-  - Context
-  - SptL
+    - Beans
+    - Core
+    - Context
+    - SptL
 - **Test**
 
 ## Inversion of Control (IoC)
@@ -70,7 +70,8 @@ A esto también se le conoce como Dependency Injection (DI). Este es el proceso 
 dependencias.
 
 > *Dependencias:* Es la relación que necesita un objeto con los demás objetos con los que va a trabajar. Esta relación
-> se realiza mediante los argumentos del constructor, de un método de fábrica o propiedades que contenga la instancia del
+> se realiza mediante los argumentos del constructor, de un método de fábrica o propiedades que contenga la instancia
+> del
 > objeto.
 
 Estos objetos estarán dentro del contenedor *Spring IoC* y forman parte de la columna vertebral de la aplicación, y
@@ -90,11 +91,12 @@ bean.
 
 Las clases de la aplicación se combinan con *metadatos de configuración* para que después estos se puedan utilizar.
 
-> Proximamente Diagrama
+> Próximamente Diagrama
 
 ## Metadatos de configuración
 
-Los metadatos sirven para indicarle a Spring como configurar y ensamblar los beans para crear las instancias en la aplicación. Existen 3 maneras de crear estos metadatos:
+Los metadatos sirven para indicarle a Spring como configurar y ensamblar los beans para crear las instancias en la
+aplicación. Existen 3 maneras de crear estos metadatos:
 
 - Configuración con XML
 - Configuración basada en Java (Anotaciones)
@@ -102,18 +104,45 @@ Los metadatos sirven para indicarle a Spring como configurar y ensamblar los bea
 
 ### Metadatos de un bean por XML
 
-Un contenedor Spring IoC gestionará uno o más beans, y se utilizarán los metadatos que proporcionaran al contenedor por definiciones XML. Los cuales son:
+Un contenedor Spring IoC gestionará uno o más beans, y se utilizarán los metadatos que proporcionarán al contenedor por
+definiciones XML. Los cuales son:
 
 - **Nombre del paquete:** Es la ubicación de la clase de la implementación del bean.
 - **Configuración del comportamiento del bean:** Alcance, devoluciones del ciclo de vida, entre otros.
-- **Referencias:** Denominado también *colaboraciones* o *dependencias*, son las interacciones con los otros beans para realizar una lógica de negocio.
+- **Referencias:** Denominado también *colaboraciones* o *dependencias*, son las interacciones con los otros beans para
+  realizar una lógica de negocio.
 - **Ajustes de configuración:** Es la cantidad de conexiones de un bean que administra unos grupos de conexiones.
 
 ### Definición de un Bean
 
 Atributos o elementos de la etiqueta bean:
 
-- **Id o name:** Le asigna un nombre al bean por el que nos referimos a él en el contenedor de Spring.
-- **Class:** Aquí se permite especificar qué tipo de bean será una vez sea especificado el paquete con el nombre de la clase a la que pertenece.
-- **< constructor-arg >:** Se utiliza para dar información a Spring de cómo construir al bean por medio de un constructor.
+- **Id o name:** Le asigna un nombre al Bean por el que nos referimos a él en el contenedor de Spring.
+- **Class:** Aquí se permite especificar qué tipo de bean será una vez sea especificado el paquete con el nombre de la
+  clase a la que pertenece.
+- **< constructor-arg >:** Se utiliza para dar información a Spring de cómo construir al bean por medio de un
+  constructor.
 - **< property >** Da la posibilidad de inyectar valores llamando al método setter de las propiedades del bean.
+
+### Inyección de colecciones
+
+- < list >: Permite repetidos
+- < set >: No repetidos
+- < map >: Nombre puede ser de cualquier tipo y casi siempre se le puede poner un '< key >' para identificarle
+- < prop >: Nombre y valor solo pueden ser String.
+
+La configuración adecuada en sí, será la misma que establezca la estructura del proyecto.
+
+> Checar bean-configuration.xml y hacer de nuevo los proyectos
+
+> Tarea: 5 Collection, 6 Reportes (Interfaz), 7 Reportes to Collection
+> Hacerlo en el proyecto previo, cambiarlo y modificarlo acorde a la asignación
+> programa 8: modelo Singleton
+> El programa 9: Prototype retomando el programa 7
+> 
+> Para el lunes
+
+### Scop
+
+Este atributo permite que el bean sea definido como un nuevo objeto pero configurandolo para no sea Singleton.
+Para comprobar este modelo, nos aseguramos de las direcciones con pruebas de escritorio
