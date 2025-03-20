@@ -117,3 +117,26 @@ Atributos o elementos de la etiqueta bean:
 - **Class:** Aquí se permite especificar qué tipo de bean será una vez sea especificado el paquete con el nombre de la clase a la que pertenece.
 - **< constructor-arg >:** Se utiliza para dar información a Spring de cómo construir al bean por medio de un constructor.
 - **< property >** Da la posibilidad de inyectar valores llamando al método setter de las propiedades del bean.
+
+
+> Apunte parcialmente perdido
+
+### Scop
+Este atributo permite que el bean sea definido como un nuevo objeto pero configurandolo para no sea Singleton. Para comprobar este modelo, nos aseguramos de las direcciones con pruebas de escritorio
+
+##### Tarea 
+- Actividad es una interfaz faltante
+- Documentación, buscar Spring PDF.
+- Proyecto fuerte: Se necesita crear una app web ocupando Spring, dicha aplicación debe de registrar los pedidos que se realicen en la venta de tacos de canasta.
+
+1. Crear la relación de las clases (UML diagram) (Pedido: a: Tacos y b: pagos) para 22 de feb, tacos Aragon.
+
+
+### Anotaciones
+
+> **ComponentScan:** permite que el programa lea los paquetes necesarios para la configuración de los beans
+>  - Esta anotación suele utilizar @List que permite
+
+> **ImportResource:** Permite ler todos los archivos necesarios ('xml' por ejemplo) para las configuraciones
+
+> **Import:** Esta anotación se puede usar en lugar de *ComponentScan*
